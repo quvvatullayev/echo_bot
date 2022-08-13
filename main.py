@@ -33,18 +33,18 @@ def get_last_update(updates):
 
 
 # Last update id
-last_update_id = get_last_update()[-1]
+last_update_id = get_last_update(get_updates())[-1]
 #Send message through loop
 current_update_id = -1 #results[-1]['update_id']
 while True:
     results = get_updates()
 
     if last_update_id != current_update_id:
-        
-        text, chat_id = get_last_update(results)
+        print(last_update_id)
+        text, chat_id ,current_update_id = get_last_update(results)
         send_message(text, chat_id)
         
-    current_update_id = 1 #results[-1]['update_id']
+        last_update_id = current_update_id
 
     
 
