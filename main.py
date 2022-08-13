@@ -29,6 +29,11 @@ def get_last_update(updates):
     chat_id = update['message']['chat']['id']
     return text, chat_id
 
+results = get_updates()
+text, chat_id = get_last_update(results)
+send_message(text, chat_id)
+
+
 # chat_id = '5575549228'
 # idx = 1
 # while True:
